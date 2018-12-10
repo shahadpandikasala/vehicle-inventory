@@ -23,9 +23,7 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return auth()->user();
-        return 'return dashboard';
-      //  return view('dashboard');
+        return redirect('manufacturer');
     }
 
 }
