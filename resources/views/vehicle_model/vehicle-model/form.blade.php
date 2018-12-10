@@ -1,12 +1,13 @@
 <div class="form-group {{ $errors->has('model') ? 'has-error' : ''}}">
     <label for="model" class="control-label">{{ 'Model Name' }}</label>
-    <input class="form-control" name="model" type="text" id="model" value="{{ $vehiclemodel->model or ''}}" required>
+    <input data-validation="required length"
+           data-validation-length="max100" class="form-control" name="model" type="text" id="model" value="{{ $vehiclemodel->model or ''}}" required>
     {!! $errors->first('model', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div  class="form-group {{ $errors->has('manufacturer_id') ? 'has-error' : ''}}">
+<div   class="form-group {{ $errors->has('manufacturer_id') ? 'has-error' : ''}}">
     <label class="control-label" for="manufacturer_id">Manufacturer</label>
-    <select name="manufacturer_id" id="manufacturer_id" class="form-control select2" required >
+    <select  name="manufacturer_id" id="manufacturer_id" class="form-control select2" required >
         @foreach ($manufacturers as $data)
             <option @if (isset($vehiclemodel->manufacturer_id) && $vehiclemodel->manufacturer_id == $data->id) selected @endif value="{{$data->id}}">{{$data->manufacturer}}</option>
         @endforeach
@@ -20,7 +21,8 @@
 
 <div class="form-group {{ $errors->has('registration_number') ? 'has-error' : ''}}">
     <label for="registration_number" class="control-label">{{ 'Registration Number' }}</label>
-    <input class="form-control" name="registration_number" type="text" id="registration_number" value="{{ $vehiclemodel->registration_number or ''}}" >
+    <input data-validation="required length"
+           data-validation-length="max100" class="form-control" name="registration_number" type="text" id="registration_number" value="{{ $vehiclemodel->registration_number or ''}}" >
     {!! $errors->first('registration_number', '<p class="help-block">:message</p>') !!}
 </div>
 

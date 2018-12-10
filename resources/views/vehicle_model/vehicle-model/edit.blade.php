@@ -74,4 +74,10 @@ Vehiclemodel
 @endsection
 @push('scripts')
     <script src="{{asset('plugins/assets/dropzone/dropzone.js')}}"></script>
+
+    {{-- jquery validator/ --}}
+    <script src="{{asset('plugins/formvalidator/jquery.form-validator.min.js')}}"></script>
+    <script>
+        $.validate();
+    </script>
 @endpush

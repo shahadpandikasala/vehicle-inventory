@@ -49,3 +49,10 @@ Manufacturer
     </div>
 </div>
 @endsection
+@push('scripts')
+    {{-- jquery validator/ --}}
+    <script src="{{asset('plugins/formvalidator/jquery.form-validator.min.js')}}"></script>
+    <script>
+        $.validate();
+    </script>
+@endpush
