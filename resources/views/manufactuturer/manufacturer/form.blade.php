@@ -1,6 +1,7 @@
 <div class="form-group {{ $errors->has('manufacturer') ? 'has-error' : ''}}">
     <label for="manufacturer" class="control-label">{{ 'Manufacturer' }}</label>
-    <input class="form-control" name="manufacturer" type="text" id="manufacturer" value="{{ $manufacturer->manufacturer or ''}}" >
+    <input  data-validation="required length"
+            data-validation-length="max100" class="form-control" name="manufacturer" type="text" id="manufacturer" value="{{ $manufacturer->manufacturer or ''}}" >
     {!! $errors->first('manufacturer', '<p class="help-block">:message</p>') !!}
 </div>
 
